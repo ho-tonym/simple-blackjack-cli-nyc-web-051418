@@ -56,10 +56,11 @@ end
 
 def runner
   welcome
-  hit1 = hit?(initial_round)
-  while hit1 <= 21 do
-        new_hit = hit?(hit1)
-        hit1 = new_hit
+  total = initial_round
+
+  while total <= 21 do
+        total = hit(total)
   end
-  end_game(hit1)
+
+  end_game(total)
 end
