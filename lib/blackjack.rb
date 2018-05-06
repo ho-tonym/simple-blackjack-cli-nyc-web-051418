@@ -19,7 +19,7 @@ def get_user_input
 end
 
 def end_game(integer)
-  "Sorry, you hit #{integer}. Thanks for playing!"
+  puts "Sorry, you hit #{integer}. Thanks for playing!"
 end
 
 def initial_round
