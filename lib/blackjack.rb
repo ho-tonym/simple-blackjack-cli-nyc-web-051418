@@ -26,7 +26,6 @@ end
 def initial_round
   first_card = deal_card
   second_card = deal_card
-
   total = first_card + second_card
   display_card_total(total)
   return total
@@ -57,13 +56,10 @@ end
 
 def runner
   welcome
-  initial_round
-
   hit1 = hit?(initial_round)
   while hit1 <= 21 do
         new_hit = hit?(hit1)
         hit1 = new_hit
   end
-binding.pry
   end_game(hit1)
 end
