@@ -64,6 +64,6 @@ def runner
         new_hit = hit?(hit1)
         hit1 = new_hit
   end
-
+binding.pry
   end_game(hit1)
 end
