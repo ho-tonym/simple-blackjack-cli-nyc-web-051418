@@ -54,25 +54,7 @@ end
 
 #####################################################
 # get every test to pass before coding runner below #
-#####################################################
-def hit?(total)
-  prompt_user
-  input = get_user_input
 
-  if input == "s"
-    display_card_total(total)
-    total
-  elsif input == "h"
-    card = deal_card
-    total += card
-    display_card_total(total)
-    total
-  else
-    invalid_command
-    prompt_user
-    hit?(total)
-  end
-end
 
 def runner
   welcome
