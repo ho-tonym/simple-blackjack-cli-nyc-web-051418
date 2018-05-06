@@ -31,6 +31,8 @@ def initial_round
   return total
 end
 
+
+
 def hit?(total)
   prompt_user
     input = get_user_input
@@ -53,6 +55,24 @@ end
 #####################################################
 # get every test to pass before coding runner below #
 #####################################################
+def hit?(total)
+  prompt_user
+  input = get_user_input
+
+  if input == "s"
+    display_card_total(total)
+    total
+  elsif input == "h"
+    card = deal_card
+    total += card
+    display_card_total(total)
+    total
+  else
+    invalid_command
+    prompt_user
+    hit?(total)
+  end
+end
 
 def runner
   welcome
@@ -61,6 +81,6 @@ def runner
   while total <= 21 do
         total = hit?(total)
   end
-
+  display_card_total(total)
   end_game(total)
 end
