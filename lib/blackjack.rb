@@ -66,5 +66,5 @@ def runner
         hit1 = new_hit
   end
 
-  end_game(new_hit)
+  end_game(hit1)
 end
