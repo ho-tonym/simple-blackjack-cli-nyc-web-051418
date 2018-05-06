@@ -35,7 +35,7 @@ def hit?(total)
     input = get_user_input
 
   if input == "s"
-    return total
+    total
   elsif input == "h"
     card = deal_card
     total += card
@@ -57,8 +57,10 @@ def runner
   welcome
   initial_round
   display_card_total(initial_round)
-  while hit? <= 21 do
-        hit?
+  hit1 = hit?(initial_round)
+  while hit1 <= 21 do
+        new_hit = hit?(hit1)
+        hit1 = new_hit
   end
 
   end_game
