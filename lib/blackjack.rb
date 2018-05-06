@@ -28,6 +28,7 @@ def initial_round
   second_card = deal_card
 
   total = first_card + second_card
+  display_card_total(total)
   return total
 end
 
@@ -63,6 +64,6 @@ def runner
         new_hit = hit?(hit1)
         hit1 = new_hit
   end
-  display_card_total(hit1)
+
   end_game(hit1)
 end
