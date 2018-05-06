@@ -26,7 +26,6 @@ end
 def initial_round
   first_card = deal_card
   second_card = deal_card
-
   total = first_card + second_card
   display_card_total(total)
   return total
@@ -34,16 +33,20 @@ end
 
 def hit?(total)
   prompt_user
-    input = get_user_input
+  input = get_user_input
 
   if input == "s"
+    display_card_total(total)
     total
   elsif input == "h"
     card = deal_card
     total += card
+    display_card_total(total)
+    total
   else
     invalid_command
     prompt_user
+    hit?(total)
   end
 end
 
@@ -57,14 +60,11 @@ end
 
 def runner
   welcome
-  initial_round
-  display_card_total(initial_round)
+  total = initial_round
 
-  hit1 = hit?(initial_round)
-  while hit1 <= 21 do
-        new_hit = hit?(hit1)
-        hit1 = new_hit
+  while total <= 21 do
+        total = hit?(total)
   end
 
-  end_game(new_hit)
+  end_game(total)
 end
